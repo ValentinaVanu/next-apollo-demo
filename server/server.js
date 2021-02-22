@@ -1,15 +1,25 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+// const { makeExecutableSchema, addMockFunctionsToSchema } = require('graphql-tools')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
-const myGraphQLSchema = require('./schema')
+const schema = require('./schema')
+const typeDefs = `type People {
+  firstName: String
+}
+type Query {
+  people: [People]
+}
+`
+// const myGraphQLSchema = makeExecutableSchema({ typeDefs })
+// const myGraphQLSchema = require('./schema')
 
 const app = express();
 
 // to access graphql API from the client side
 app.use(cors())
 // bodyParser is needed just for POST.
-app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: myGraphQLSchema }));
+app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 // for the graphiql interface
 app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
