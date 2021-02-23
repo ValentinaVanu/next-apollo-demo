@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server",
-    "sjs": "json-server --port=1234 --watch src/data/data.json"
+    "dev": "nodemon server"
   },
   "dependencies": {
     "apollo-server-express": "^1.2.0",

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders card collection component should render the component 1`] = `
+<div
+  className="Cardstyle__StyledCardWrapper-sc-1aqocvc-1 kJfoTV"
+/>
+`;

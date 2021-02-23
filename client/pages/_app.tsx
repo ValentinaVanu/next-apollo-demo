@@ -11,10 +11,15 @@ const style: any = {
 
 export default function App({ Component, pageProps }) {
   console.log(client)
-  return(
+  return (
     <Provider store={store}>
       <ApolloProvider client={client}>
-        <Component { ...pageProps } />
+        <Component  {...pageProps} />
+        <style jsx global>{`
+          body {
+            background: #f5f5f5;
+          }
+        `}</style>
       </ApolloProvider>
     </Provider>
 

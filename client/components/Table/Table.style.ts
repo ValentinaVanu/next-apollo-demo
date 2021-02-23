@@ -1,6 +1,11 @@
 import { TableCell } from '@material-ui/core'
 import styled from 'styled-components'
 
+
+export const StyledTableWrapper = styled.div`
+  padding: 2rem;
+`
+
 export const StyledTableHeadCell = styled(TableCell)`
   && {
     background-color: #3f51b5;

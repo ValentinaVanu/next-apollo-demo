@@ -4,16 +4,20 @@ import styled from 'styled-components'
 
 export const StyledCard = styled(Card)`
   && {
-    background-color: rgb(63,81,2181, 0.5)
+    margin: 10px;
+
+    & h2 {
+      margin-top: 0px;
+    }
   }
 `
-// Has to be responsive!
 export const StyledCardWrapper = styled.div`
- display: grid;
- grid-gap: 10px;
-
- grid-template-columns: repeat(4, 1fr);
- grid-template-rows: repeat(4, 1fr);
+  padding: 1rem 2rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 `
 export const useStyles = makeStyles({
   root: {

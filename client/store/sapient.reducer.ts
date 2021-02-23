@@ -6,7 +6,7 @@ export const initialState = {
 }
 
 
-export const sapientReducer = ( state = initialState, action) => {
+export const sapientReducer = (state = initialState, action) => {
   switch (action.type) {
     case constant.SET_PEOPLE_LIST:
       return {

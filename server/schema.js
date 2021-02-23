@@ -5,7 +5,9 @@ const {
   GraphQLString
 } = require('graphql')
 const faker = require('faker')
-const { GraphQLList } = require('graphql/type')
+const {
+  GraphQLList
+} = require('graphql/type')
 
 console.log('M-am incarcat')
 const AddressType = new GraphQLObjectType({
@@ -69,7 +71,9 @@ module.exports = new GraphQLSchema({
       people: {
         type: new GraphQLList(Person),
         resolve() {
-          return Array.from({ length: 50 }, (_, k) => k)
+          return Array.from({
+            length: 2000
+          }, (_, k) => k)
         }
       }
     }

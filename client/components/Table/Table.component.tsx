@@ -14,8 +14,6 @@ import { columns, IColumn } from './table.config';
 import * as TS from './Table.style'
 
 
-
-
 const SapientTable = () => {
   const [people, limit] = useSelector(({ sapient }) => [
     sapient.people,
@@ -38,7 +36,7 @@ const SapientTable = () => {
 
 
   return (
-    <div>
+    <TS.StyledTableWrapper>
       <Paper elevation={6}>
         <TableContainer className={classes.container}>
           <Table stickyHeader aria-label="sticky table">
@@ -57,8 +55,8 @@ const SapientTable = () => {
             </TableHead>
             <TableBody>
               {rows?.map((row) => {
-                const fullRow = {...row, ...row.address}
-                const {address, __typename, ...rest} = fullRow 
+                const fullRow = { ...row, ...row.address }
+                const { address, __typename, ...rest } = fullRow
                 console.log(rest)
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={rest.firstName}>
@@ -72,12 +70,12 @@ const SapientTable = () => {
                     })}
                   </TableRow>
                 );
-                  })}
+              })}
             </TableBody>
           </Table>
         </TableContainer>
       </Paper>
-    </div>
+    </TS.StyledTableWrapper>
   )
 }
 

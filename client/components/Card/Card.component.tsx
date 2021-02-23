@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 import CardContent from '@material-ui/core/CardContent';
@@ -10,10 +10,9 @@ import * as SC from './Card.style'
 
 const CardCollection: React.FC = () => {
   const [people, limit] = useSelector(({ sapient }) => [
-    sapient.people,
+    sapient.people, 
     sapient.limit
   ])
-  console.log(limit)
   const classes = useStyles()
   const peopleList = people.slice(0, limit)
   return (
@@ -26,14 +25,15 @@ const CardCollection: React.FC = () => {
               <h4>{secondName}</h4>
               <Typography className={classes.pos} color="textSecondary">
                 <div>Street: {address.street}</div>
-            </Typography>
+              </Typography>
               <Typography variant="body2" component="p">
                 <div>Number: {address.number}</div>
                 <div>Post code: {address.postCode}</div>
               </Typography>
             </CardContent>
           </SC.StyledCard>
-      )})}
+        )
+      })}
     </SC.StyledCardWrapper>
   )
 }
